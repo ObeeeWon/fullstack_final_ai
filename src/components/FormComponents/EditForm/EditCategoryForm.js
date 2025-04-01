@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Button from '../Button/Button';
-import './EditForm.scss'
+import './EditCategoryForm.scss'
 
-const EditForm = props => {
+const EditCategoryForm = props => {
     const [category_id, setID] = useState("");
     const [category_name, setCategoryName] = useState("");
     const [item, setCategoryData] = useState({});
@@ -39,4 +39,4 @@ const EditForm = props => {
         </div>
     );
 }
-export default EditForm;
+export default EditCategoryForm;

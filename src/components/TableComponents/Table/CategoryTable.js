@@ -1,8 +1,8 @@
 import React from 'react';
 import TableRow from '../TableRow/TableRow'
-import './Table.scss'
+import './CategoryTable.scss'
 
-const Table = props => {
+const CategoryTable = props => {
 
     const _editCategory = item => {
         console.log('Table _editCategory fired');
@@ -13,8 +13,6 @@ const Table = props => {
         console.log('Table _deleteCategory fired');
         props.onDeleteCategory(item);
     }
-    //just in case it's empty
-    const categories = props.categories || [];
 
     return(
         <div className='Table-Component'>
@@ -28,7 +26,7 @@ const Table = props => {
                     </tr>
                 </thead>
                 <tbody>
-                { categories.map(
+                { props.categories.map(
                     (category, i) => { 
                         return( <TableRow key={category.category_id} index={i} category={category} 
                             onEditCategory = { _editCategory } 
@@ -40,4 +38,4 @@ const Table = props => {
         </div>
     );
 }
-export default Table;
+export default CategoryTable;

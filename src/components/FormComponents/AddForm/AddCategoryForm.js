@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Button from '../Button/Button';
-import './AddForm.scss'
+import './AddCategoryForm.scss'
 
-const AddForm = props => {
+const AddCategoryForm = props => {
     const [category_name, setCategoryName] = useState("");
     const [category, setCategoryData] = useState({});
 
@@ -36,4 +36,4 @@ const AddForm = props => {
         </div>
     );
 }
-export default AddForm;
+export default AddCategoryForm;
