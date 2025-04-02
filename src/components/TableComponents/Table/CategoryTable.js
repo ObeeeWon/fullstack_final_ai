@@ -1,5 +1,5 @@
 import React from 'react';
-import TableRow from '../TableRow/TableRow'
+import CategoryTableRow from '../TableRow/CategoryTableRow'
 import './CategoryTable.scss'
 
 const CategoryTable = props => {
@@ -28,7 +28,7 @@ const CategoryTable = props => {
                 <tbody>
                 { props.categories.map(
                     (category, i) => { 
-                        return( <TableRow key={category.category_id} index={i} category={category} 
+                        return( <CategoryTableRow key={category.category_id} index={i} category={category} 
                             onEditCategory = { _editCategory } 
                             onDeleteCategory = { _deleteCategory } /> ) }
                     ) 

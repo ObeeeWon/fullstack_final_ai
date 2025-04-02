@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../Button/Button';
-import './AddForm.scss';
+import './AddItemForm.scss';
 
 const AddItemForm = props => {
     const [title, setTitle] = useState("");
@@ -89,11 +89,11 @@ const AddItemForm = props => {
             <label>Category:</label>
             <select value={category_id} onChange={e => _detectCategoryChanged('category_id', e.target.value)}>
                 <option value="">Select a category</option>
-                {props.categories.map(cat => (
+                {props.categories?.map(cat => (
                     <option key={cat.category_id} value={cat.category_id}>{cat.category_name}</option>
                 ))}
             </select><br />
-            <Button title="Add Item" onclick={_add} />
+            <Button title="Add Item" onClick={_add} />
         </div>
     );
 }

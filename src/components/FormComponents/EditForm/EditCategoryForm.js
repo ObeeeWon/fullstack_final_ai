@@ -35,7 +35,7 @@ const EditCategoryForm = props => {
             <label>Category Name:</label>
             <input type="text" placeholder='Category Name' value={ category_name } 
                    onChange={ e => _detectCategoryChanged('Category Name', e.target.value )} /><br />
-            <Button title="Save Category Name" onclick={ _update } />
+            <Button title="Save Category Name" onClick={ _update } />
         </div>
     );
 }

@@ -97,11 +97,11 @@ const EditItemForm = (props) => {
             <label>Category:</label>
             <select value={category_id} onChange={(e) => _detectCategoryChanged('category_id', e.target.value)}>
                 <option value="">Select a category</option>
-                {props.categories.map((category) => (
+                {props.categories?.map((category) => (
                     <option key={category.category_id} value={category.category_id}>{category.category_name}</option>
                 ))}
             </select><br />
-            <Button title="Save Item" onclick={_update} />
+            <Button title="Save Item" onClick={_update} />
         </div>
     );
 };

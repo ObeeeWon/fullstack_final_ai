@@ -1,5 +1,5 @@
 import React from 'react';
-import TableRow from '../TableRow/TableRow';
+import ItemTableRow from '../TableRow/ItemTableRow';
 import './ItemTable.scss';
 
 const ItemTable = props => {
@@ -32,7 +32,7 @@ const ItemTable = props => {
                 <tbody>
                 { props.items.map(
                     (item, i) => { 
-                        return( <TableRow key={item.item_id} index={i} item={item} 
+                        return( <ItemTableRow key={item.item_id} index={i} item={item} 
                             onEditItem={_editItem} 
                             onDeleteItem={_deleteItem} /> ); 
                     })

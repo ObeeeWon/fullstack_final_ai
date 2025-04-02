@@ -1,14 +1,14 @@
 import React from 'react';
-import './TableRow.scss'
+import './CategoryTableRow.scss'
 
-const TableRow = props => {
+const CategoryTableRow = props => {
 
     const _editCategory = () => {
-        console.log('TableRow _editRowCategory fired')
+        console.log('CategoryTableRow _editRowCategory fired')
         props.onEditCategory(props.category);
     }
     const _deleteCategory = () => {
-        console.log('TableRow _deleteRowCategory fired')
+        console.log('CategoryTableRow _deleteRowCategory fired')
         if (window.confirm('Are you sure you want to delete this category?')) props.onDeleteCategory(props.category);
     }
 
@@ -19,4 +19,4 @@ const TableRow = props => {
                 <td><button onClick={ _deleteCategory }>DELETE</button></td>
             </tr>);
 }
-export default TableRow;
+export default CategoryTableRow;
