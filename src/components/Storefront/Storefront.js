@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Storefront.scss';
+import bannerImage from '../../image/banner.png'
 
 const Storefront = () => {
     const [storefrontItems, setStorefrontItems] = useState([]);
@@ -18,6 +19,7 @@ const Storefront = () => {
     return (
         <div className="storefront-container">
             <h1>Storefront</h1>
+            <img src={bannerImage} alt="Storefront Banner" className="banner-image" />
             <div className="item-grid">
                 {storefrontItems.map(item => (
                     <div key={item.id} className="item-card">
