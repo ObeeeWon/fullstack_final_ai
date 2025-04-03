@@ -8,5 +8,13 @@ const conn = mysql.createConnection({
     database: "db_fullstack_final"
 });
 
-conn.connect();
+conn.connect(err => {
+    if (err) {
+      console.error('Database connection failed:', err);
+      return;
+    }
+    console.log('Connected to database');
+  });
+  
+// conn.connect();
 module.exports = conn;

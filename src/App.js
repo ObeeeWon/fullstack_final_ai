@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import AddForm from './components/FormComponents/AddForm/AddCategoryForm';
-import EditForm from './components/FormComponents/EditForm/EditCategoryForm';
+import AddCategoryForm from './components/FormComponents/AddForm/AddCategoryForm';
+import EditCategoryForm from './components/FormComponents/EditForm/EditCategoryForm';
 import CategoryTable from './components/TableComponents/Table/CategoryTable';
-import ItemTable from './components/TableComponents/Table/ItemTable';
 import AddItemForm from './components/FormComponents/AddForm/AddItemForm';
 import EditItemForm from './components/FormComponents/EditForm/EditItemForm';
+import ItemTable from './components/TableComponents/Table/ItemTable';
+import Storefront from './components/Storefront/Storefront';
 import './App.scss';
 
 // Category Page
@@ -59,9 +60,9 @@ const Categories = () => {
   return (
     <div className="App">
       {editing ? (
-        <EditForm onUpdateCategory={_updateItem} item={selectedItem} />
+        <EditCategoryForm onUpdateCategory={_updateItem} item={selectedItem} />
       ) : (
-        <AddForm onAddItem={_addItem} />
+        <AddCategoryForm onAddItem={_addItem} />
       )}
       <CategoryTable categories={items} onEditCategory={_editCategory} onDeleteCategory={_deleteCategory} />
     </div>
@@ -136,25 +137,7 @@ const Items = () => {
             <ItemTable items={items} onEditItem={_editItem} onDeleteItem={_deleteItem} />
         </div>
     );
-};  
-
-function Storefront() {
-  return (
-    <div style={{ padding: 20 }}>
-      <h2>Storefront</h2>
-      <p>Welcome to the Storefront page.</p>
-    </div>
-  );
-}
-
-// function Items() {
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h2>Items</h2>
-//       <p>Browse through our items.</p>
-//     </div>
-//   );
-// }
+};
 
 function NoMatch() {
   return (
@@ -169,7 +152,7 @@ function AppLayout() {
   return (
     <>
       <nav style={{ margin: 10 }}>
-        <Link to="/" style={{ padding: 5 }}>Storefront</Link>
+        <Link to="/storefront" style={{ padding: 5 }}>Storefront</Link>
         <Link to="/items" style={{ padding: 5 }}>Items</Link>
         <Link to="/categories" style={{ padding: 5 }}>Categories</Link>
       </nav>

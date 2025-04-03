@@ -43,8 +43,15 @@ const AddItemForm = props => {
 
     const _add = () => {
         console.log('_add fired');
-        props.onAddItem(item);
-        _clear();    
+        props.onAddItem({
+            'title': title,
+            'description': description,
+            'price': price,
+            'quantity': quantity,
+            'sku': sku,
+            'category_id': category_id
+        });
+        _clear();
     }
 
     const _clear = () => {

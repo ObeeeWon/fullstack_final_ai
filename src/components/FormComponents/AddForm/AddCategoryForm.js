@@ -32,7 +32,7 @@ const AddCategoryForm = props => {
             <label>Category Name:</label>
             <input type="text" placeholder='Category Name' value={ category_name } 
                    onChange={ e => _detectCategoryChanged('Category Name', e.target.value )} /><br />
-            <Button title="Add Category Name" onclick={ _add } />
+            <Button title="Add Category Name" onClick={ _add } />
         </div>
     );
 }

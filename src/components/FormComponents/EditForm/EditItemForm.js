@@ -95,7 +95,8 @@ const EditItemForm = (props) => {
             <label>SKU:</label>
             <input type="text" placeholder="SKU" value={sku} onChange={(e) => _detectSKUChanged('sku', e.target.value)} /><br />
             <label>Category:</label>
-            <select value={category_id} onChange={(e) => _detectCategoryChanged('category_id', e.target.value)}>
+            <select 
+                value={category_id} onChange={(e) => _detectCategoryChanged('category_id', e.target.value)}>
                 <option value="">Select a category</option>
                 {props.categories?.map((category) => (
                     <option key={category.category_id} value={category.category_id}>{category.category_name}</option>

@@ -1,4 +1,3 @@
-//establish a connection to DB here
 const db = require("../connection");
 
 module.exports = {
@@ -12,13 +11,14 @@ module.exports = {
         console.log("Received body:", req.body);
 
         db.query(
-            `INSERT INTO items (title, description, price, quantity, sku) VALUES (?, ?, ?, ?, ?)`,
+            `INSERT INTO items (title, description, price, quantity, sku, category_id) VALUES (?, ?, ?, ?, ?, ?)`,
             [
                 req.body.item.title,
                 req.body.item.description,
                 req.body.item.price,
                 req.body.item.quantity,
-                req.body.item.sku
+                req.body.item.sku,
+                req.body.item.category_id
             ],
             (err, result) => {
                 console.log("result: " + JSON.stringify(result));
@@ -33,13 +33,14 @@ module.exports = {
     },
     update(req, res) {
         db.query(
-            `UPDATE items SET title=?, description=?, price=?, quantity=?, sku=? WHERE item_id=?`,
+            `UPDATE items SET title=?, description=?, price=?, quantity=?, sku=? , category_id=?WHERE item_id=?`,
             [
                 req.body.item.title,
                 req.body.item.description,
                 req.body.item.price,
                 req.body.item.quantity,
                 req.body.item.sku,
+                req.body.item.category_id,
                 req.params.item_id
             ],
             (err, result) => {

@@ -1,6 +1,7 @@
 const express = require('express');
 const CategoryController = require("./controllers/CategoryController");
 const ItemController = require("./controllers/ItemController")
+const StorefrontController = require("./controllers/StorefrontController");
 
 const router = express.Router();
 
@@ -13,5 +14,7 @@ router.get('/items', ItemController.index);
 router.post('/items', ItemController.store);
 router.patch('/items/:item_id', ItemController.update);
 router.delete('/items/:item_id', ItemController.destroy);
+
+router.get('/storefront', StorefrontController.getStorefrontData);
 
 module.exports = router;

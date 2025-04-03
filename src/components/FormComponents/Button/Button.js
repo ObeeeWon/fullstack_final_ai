@@ -5,7 +5,7 @@ const Button = props => {
 
     const _buttonClicked = () => {
         console.log('_buttonClicked fired');
-        props.onclick();
+        props.onClick();
     }
 
     return( 
