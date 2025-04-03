@@ -117,11 +117,11 @@ const Items = () => {
   
     // delete item
     const _deleteItem = (item) => {
-      if (window.confirm('Are you sure you want to delete this item?')) {
-        axios.delete(`http://127.0.0.1:3001/items/${item.item_id}`)
-          .then(res => setItems(res.data.items))
-          .catch(err => console.log(err));
-      }
+      // if (window.confirm('Are you sure you want to delete this item?')) {
+      axios.delete(`http://127.0.0.1:3001/items/${item.item_id}`)
+        .then(res => setItems(res.data.items))
+        .catch(err => console.log(err));
+      // }
     };
   
     return (
