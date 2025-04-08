@@ -117,11 +117,9 @@ const Items = () => {
   
     // delete item
     const _deleteItem = (item) => {
-      // if (window.confirm('Are you sure you want to delete this item?')) {
       axios.delete(`http://127.0.0.1:3001/items/${item.item_id}`)
         .then(res => setItems(res.data.items))
         .catch(err => console.log(err));
-      // }
     };
   
     return (
@@ -153,8 +151,8 @@ function AppLayout() {
     <>
       <nav style={{ margin: 10 }}>
         <Link to="/storefront" style={{ padding: 5 }}>Storefront</Link>
-        <Link to="/items" style={{ padding: 5 }}>Items</Link>
         <Link to="/categories" style={{ padding: 5 }}>Categories</Link>
+        <Link to="/items" style={{ padding: 5 }}>Items</Link>
       </nav>
       <Routes>
         <Route path="/storefront" element={<Storefront />} />

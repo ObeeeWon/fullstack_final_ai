@@ -32,8 +32,9 @@ module.exports = {
         );
     },
     update(req, res) {
+        console.log("UPDATE Request Body:", JSON.stringify(req.body));//check if respond 500
         db.query(
-            `UPDATE items SET title=?, description=?, price=?, quantity=?, sku=? , category_id=?WHERE item_id=?`,
+            `UPDATE items SET title=?, description=?, price=?, quantity=?, sku=? , category_id=? WHERE item_id=?`,
             [
                 req.body.item.title,
                 req.body.item.description,
@@ -47,6 +48,7 @@ module.exports = {
                 if (err) return res.sendStatus(500);
 
                 db.query(`SELECT * FROM items`, (err, results) => {
+                    console.error("DATABASE UPDATE FAILED:", err);//check 500
                     if (err) return res.sendStatus(500);
                     return res.send({ items: results });
                 });
