@@ -43,7 +43,7 @@ const AuthController = {
                 return res.status(500).json({ message: 'Error logging in.' }); // Returns an error if there's a database issue
             }
             if (!user) {
-                return res.status(401).json({ message: 'Invalid credentials.' }); // Returns an error if the user is not found
+                return res.status(401).json({ message: 'user is not found.' }); // Returns an error if the user is not found
             }
 
             bcrypt.compare(password, user.password, (err, isMatch) => {
@@ -56,7 +56,7 @@ const AuthController = {
                     // In a real application, you might generate a Session or JWT here
                     return res.status(200).json({ message: 'Logged in successfully.' }); // Returns a success message upon successful login
                 } else {
-                    return res.status(401).json({ message: 'Invalid credentials.' }); // Returns an error if the password doesn't match
+                    return res.status(401).json({ message: 'Incorrect password.' }); // Returns an error if the password doesn't match
                 }
             });
         });
