@@ -3,7 +3,7 @@ const CategoryController = require("./controllers/CategoryController");
 const ItemController = require("./controllers/ItemController")
 const StorefrontController = require("./controllers/StorefrontController");
 
-const router = express.Router();
+const router = express.Router();//gather all routers
 
 router.get('/categories', CategoryController.index);
 router.post('/categories', CategoryController.store);

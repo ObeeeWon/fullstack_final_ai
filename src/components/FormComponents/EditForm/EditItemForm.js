@@ -45,8 +45,7 @@ const EditItemForm = (props) => {
     const _update = () => {
         console.log('_update fired');
         props.onUpdateItem(item);
-        // setTimeout(500);
-        // _clear();
+        _clear();
     };
 
     const _clear = () => {
